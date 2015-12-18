@@ -63,7 +63,7 @@ while True:
 		temperature = temperature * 9/5.0 + 32
 		logging.info('%dF/%dF Heater:%s' % (temperature, tempSet, pi.read(heater_pin)))
 		print '%dF/%dF' % (temperature, tempSet)
-		print 'Humidity={1:0.1f}%'.format(humidity)
+		#print 'Humidity={1:0.1f}%'.format(humidity)
 
 		if temperature < tempSet and pi.read(heater_pin) == False:
 			print '==== Now Heating ===='
@@ -73,7 +73,7 @@ while True:
 			if pi.read(heater_pin) == True:
 				print '==== Heater Disabled ===='
 				pi.write(heater_pin,0)
-				break
+			break
 
 	else:
 		print 'Failed to get reading. Try again! (Heater Disabled)'
