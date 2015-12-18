@@ -63,7 +63,7 @@ while True:
 		temperature = temperature * 9/5.0 + 32
 		logging.info('%dF/%dF Heater:%s' % (temperature, tempSet, pi.read(heater_pin)))
 		print '%dF/%dF' % (temperature, tempSet)
-		print 'Humidity={1:0.1f}%'.format humidity
+		print 'Humidity=%d%'% humidity
 
 		if temperature < tempSet and pi.read(heater_pin) == False:
 			print '==== Now Heating ===='
